@@ -48,7 +48,8 @@ make4.1+ perl python3.7+ rsync subversion unzip which
 ```
 
 ### Quickstart
-
+ Below instruction was simplified version, for complete guide see build-guide.md
+ 
 1. Run `./scripts/feeds update -a` to obtain all the latest package definitions
    defined in feeds.conf / feeds.conf.default
 

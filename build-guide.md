@@ -1,9 +1,11 @@
-Build system usage
+![OpenWrt logo](include/logo.png)
+
+*Build system usage
 
     Do everything as an unprivileged user, not root, without sudo.
     Make sure there are no spaces in the full path to the build directory.
 
-There is an issue affecting the current OpenWrt source tree (from at least 21.02 onwards): OpenWrt images built in certain setups will succeed, but they will hang on boot if installed on a device. To work around this issue, please follow the instructions posted here in the section titled “workaround” before checking out the source tree.
+    There is an issue affecting the current OpenWrt source tree (from at least 21.02 onwards): OpenWrt images built in certain setups will succeed, but they will hang on boot if installed on a device. To work around this issue, please follow the instructions posted here in the section titled “workaround” before checking out the source tree.
 
 After installing your build system's prerequisites, these are typical build steps:
 
