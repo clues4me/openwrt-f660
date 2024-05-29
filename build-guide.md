@@ -1,6 +1,6 @@
 ![OpenWrt logo](include/logo.png)
 
-*Build system usage
+# Build system usage
 
     Do everything as an unprivileged user, not root, without sudo.
     Make sure there are no spaces in the full path to the build directory.
