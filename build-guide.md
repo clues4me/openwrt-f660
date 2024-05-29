@@ -56,13 +56,13 @@ Possible issues:
     -bash: cd: openwrt: No such file or directory - verify the buildroot directory.
     fatal: not a git repository (or any of the parent directories): .git - change the working directory to the cloned buildroot.
 
-Updating feeds
+Updating feeds :
 
-    Pull the latest updates for the feeds in case it became outdated.
+Pull the latest updates for the feeds in case it became outdated.
 
     ./scripts/feeds update -a
 
-    Make the downloaded package/packages available in make menuconfig.
+Make the downloaded package/packages available in make menuconfig.
 
     ./scripts/feeds install <package_name>
     ./scripts/feeds install -a
