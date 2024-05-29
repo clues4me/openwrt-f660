@@ -90,18 +90,18 @@ Possible issues:
 
 Creating a local feed
 
-    Prepare your <buildroot> with git cloning openwrt sources from github (e.g. from your fork).
+Prepare your <buildroot> with git cloning openwrt sources from github (e.g. from your fork).
     Create a dir: mkdir -p <buildroot>/my_packages/<section>/<category>/<package_name>.
-    Replace the <package_name> with the name of your package.
+Replace the <package_name> with the name of your package.
     e.g. mkdir -p my_packages/net/network/rpcbind.
-    The section and category can be found in the Makefile.
-    Write a Makefile or download one Makefile from another package, look at samples on github.
-    Edit your Makefile and add necessary files, sources...
-    More: Creating packages & Creating a package from your application
-    Append a line with your custom feed to feeds.conf.default:
+The section and category can be found in the Makefile.
+Write a Makefile or download one Makefile from another package, look at samples on github.
+Edit your Makefile and add necessary files, sources...
+More: Creating packages & Creating a package from your application
+Append a line with your custom feed to feeds.conf.default:
     src-link my_packages <buildroot>/my_packages
     Replace the <buildroot> with cloned openwrt sources directory e.g. ~/openwrt
-    Move the line with your custom feed above standard feeds to override them.
+Move the line with your custom feed above standard feeds to override them.
     Now run: ./scripts/feeds update -a; ./scripts/feeds install <package_name>
     If you are doing this to resolve a dependency you can run ./scripts/feeds install <package_name> one more time and you should notice the dependency has been resolved.
     Build your package.
