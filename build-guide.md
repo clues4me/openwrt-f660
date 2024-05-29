@@ -49,7 +49,7 @@ Updating sources
 
 :!: Sources in development branch change frequently. It is recommended that you work with the latest sources.
 
-git pull
+    git pull
 
 Possible issues:
 
@@ -58,14 +58,14 @@ Possible issues:
 
 Updating feeds
 
-Pull the latest updates for the feeds in case it became outdated.
+    Pull the latest updates for the feeds in case it became outdated.
 
-./scripts/feeds update -a
+    ./scripts/feeds update -a
 
-Make the downloaded package/packages available in make menuconfig.
+    Make the downloaded package/packages available in make menuconfig.
 
-./scripts/feeds install <package_name>
-./scripts/feeds install -a
+    ./scripts/feeds install <package_name>
+    ./scripts/feeds install -a
 
 Possible issues:
 
@@ -118,51 +118,51 @@ Each branch contains the baseline code for the release version, e.g. openwrt-18.
 
 To use a branch, clone the Git repository using the git clone command explained above and then move to the branch by using the git checkout command.
 
-# List branches
-git branch -a
- 
-# Use OpenWrt master branch
-git checkout master
- 
-# Use OpenWrt 21.02 branch
-git checkout openwrt-21.02
+    # List branches
+    git branch -a
+    
+    # Use OpenWrt master branch
+    git checkout master
+    
+    # Use OpenWrt 21.02 branch
+    git checkout openwrt-21.02
 
-:!: When changing branches, it is recommended to perform a thorough scrub of your source tree by using the make distclean command. This ensures that your source tree does not contain any build artifacts or configuration files from previous build runs.
-Selecting tag
+    :!: When changing branches, it is recommended to perform a thorough scrub of your source tree by using the make distclean command. This ensures that your source tree does not contain any build artifacts or configuration files from previous build runs.
+    Selecting tag
 
-Select an individual release tag to install packages from the official release repositories for a long time.
+    Select an individual release tag to install packages from the official release repositories for a long time.
 
-# Fetch and list tags
-git fetch -t
-git tag
- 
-# Use OpenWrt 21.02.1 release
-git checkout v21.02.1
+    # Fetch and list tags
+    git fetch -t
+    git tag
+    
+    # Use OpenWrt 21.02.1 release
+    git checkout v21.02.1
 
 Selecting hash
 
 Select a specific code revision hash and sync all feeds to the same date.
 
-REV_HASH="4c73c34ec4215deb690bf03faea2a0fe725476f0"
-git checkout ${REV_HASH}
-REV_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
- 
-# Replace all src-git with src-git-full: https://openwrt.org/docs/guide-developer/feeds#feed_configuration
-sed -e "/^src-git\S*/s//src-git-full/" feeds.conf.default > feeds.conf
- 
-./scripts/feeds update -a
- 
-# Edit every line of feeds.conf in a loop to set the chosen revision hash
-sed -n -e "/^src-git\S*\s/{s///;s/\s.*$//p}" feeds.conf \
-| while read -r FEED_ID
-do
-REV_DATE="$(git log -1 --format=%cd --date=iso8601-strict)"
-REV_HASH="$(git -C feeds/${FEED_ID} rev-list -n 1 --before=${REV_DATE} ${REV_BRANCH})"
-sed -i -e "/\s${FEED_ID}\s.*\.git$/s/$/^${REV_HASH}/" feeds.conf
-done
- 
-./scripts/feeds update -a
-./scripts/feeds install -a
+    REV_HASH="4c73c34ec4215deb690bf03faea2a0fe725476f0"
+    git checkout ${REV_HASH}
+    REV_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+    
+    # Replace all src-git with src-git-full: https://openwrt.org/docs/guide-developer/feeds#feed_configuration
+    sed -e "/^src-git\S*/s//src-git-full/" feeds.conf.default > feeds.conf
+    
+    ./scripts/feeds update -a
+    
+    # Edit every line of feeds.conf in a loop to set the chosen revision hash
+    sed -n -e "/^src-git\S*\s/{s///;s/\s.*$//p}" feeds.conf \
+    | while read -r FEED_ID
+    do
+    REV_DATE="$(git log -1 --format=%cd --date=iso8601-strict)"
+    REV_HASH="$(git -C feeds/${FEED_ID} rev-list -n 1 --before=${REV_DATE} ${REV_BRANCH})"
+    sed -i -e "/\s${FEED_ID}\s.*\.git$/s/$/^${REV_HASH}/" feeds.conf
+    done
+    
+    ./scripts/feeds update -a
+    ./scripts/feeds install -a
 
 Using official build config
 
@@ -181,7 +181,8 @@ wget https://downloads.openwrt.org/releases/21.02.1/targets/ath79/generic/config
 wget https://downloads.openwrt.org/releases/18.06.0/targets/ramips/mt7621/config.seed -O .config
 
 When using this configuration the correct defaults will be already selected for the Target and Subtarget but not for the Target profile so you will have to tailor it for the specific device if you want to build only that one.
-Image configuration
+
+# Image configuration
 Menuconfig
 
 The build system configuration interface handles the selection of the target platform, packages to be compiled, packages to be included in the firmware file, some kernel options, etc.
@@ -232,27 +233,27 @@ Creating diff file
 
 Save the build config changes.
 
-# Write the changes to diffconfig
-./scripts/diffconfig.sh > diffconfig
+    # Write the changes to diffconfig
+    ./scripts/diffconfig.sh > diffconfig
 
-The firmware make process automatically creates the configuration diff file config.buildinfo, previously named as config.seed in 18.06 and before.
-Using diff file
+    The firmware make process automatically creates the configuration diff file config.buildinfo, previously named as config.seed in 18.06 and before.
+    Using diff file
 
-These changes can form the basis of a config file <buildroot>/.config. By running make defconfig these changes will be expanded into a full config.
+    These changes can form the basis of a config file <buildroot>/.config. By running make defconfig these changes will be expanded into a full config.
 
-# Write changes to .config
-cp diffconfig .config
- 
-# Expand to full config
-make defconfig
+    # Write changes to .config
+    cp diffconfig .config
+    
+    # Expand to full config
+    make defconfig
 
-These changes can also be added to the bottom of the config file (<buildroot>/.config), by running make defconfig these changes will override the existing configuration.
+    These changes can also be added to the bottom of the config file (<buildroot>/.config), by running make defconfig these changes will override the existing configuration.
 
-# Append changes to bottom of .config
-cat diffconfig >> .config
- 
-# Apply changes
-make defconfig
+    # Append changes to bottom of .config
+    cat diffconfig >> .config
+    
+    # Apply changes
+    make defconfig
 
 Custom files
 
@@ -308,13 +309,13 @@ Before running final make it is best to issue make download command first, this 
 
 If you try compiling OpenWrt on multiple cores and don't download all source files for all dependency packages it is very likely that your build will fail.
 
-make download
+    make download
 
 Building images
 
 Everything is now ready for building the image(s), which is done with one single command:
 
-make
+    make
 
 This should compile toolchain, cross-compile sources, package packages, and generate an image ready to be flashed.
 Make tips
@@ -325,32 +326,32 @@ make download will pre-download all source code for all dependencies, this will 
 
 Example of pre-downloading and building the images on a 4 core CPU:
 
-make -j5 download world
+    make -j5 download world
 
 You can use ''nproc'' command to get available CPU count:
 
-make -j $(nproc) download world
+    make -j $(nproc) download world
 
 or a better macro with nproc+1:
 
-make -j $(($(nproc)+1))
+    make -j $(($(nproc)+1))
 
 Building in the background
 
 If you intend to use your system while building, you can have the build process use only idle I/O and CPU capacity like this (4 core, 8 thread CPU):
 
-make download
-ionice -c 3 chrt --idle 0 nice -n19 make -j9
+    make download
+    ionice -c 3 chrt --idle 0 nice -n19 make -j9
 
 Building single packages
 
 When developing or packaging software, it is convenient to be able to build only the package in question, e.g. with package jsonpath:
 
-make package/utils/jsonpath/compile V=s
+    make package/utils/jsonpath/compile V=s
 
 For a rebuild:
 
-make package/utils/jsonpath/{clean,compile} V=s
+    make package/utils/jsonpath/{clean,compile} V=s
 
 It doesn't matter what feed the package is located in, this same syntax works for any installed package.
 
@@ -359,10 +360,10 @@ Spotting build errors
 
 If for some reason the build fails, the easiest way to spot the error is to do:
 
-make V=s 2>&1 | tee build.log | grep -i -E "^make.*(error|[12345]...Entering dir)"
- 
-make V=s 2>&1 | tee build.log | grep -i '[^_-"a-z]error[^_-.a-z]' 
-(may not work)
+    make V=s 2>&1 | tee build.log | grep -i -E "^make.*(error|[12345]...Entering dir)"
+    
+    make V=s 2>&1 | tee build.log | grep -i '[^_-"a-z]error[^_-.a-z]' 
+    (may not work)
 
 :!: If grep throws an error, use fgrep instead.
 
@@ -370,7 +371,7 @@ The above saves a full verbose copy of the build output (with stdout piped to st
 
 Another example:
 
-ionice -c 3 nice -n 20 make -j 2 V=s CONFIG_DEBUG_SECTION_MISMATCH=y 2>&1 | tee build.log
+    ionice -c 3 nice -n 20 make -j 2 V=s CONFIG_DEBUG_SECTION_MISMATCH=y 2>&1 | tee build.log
 
 The above saves a full verbose copy of the build output (with stdout piped to stderr) in build.log while building using only background resources on a dual core CPU.
 
@@ -379,26 +380,26 @@ Getting beep notification
 
 Depending on your CPU, the process will take a while, or while longer. If you want an acoustic notification, you could use this way:
 
-make ...; echo -e '\a'
+    make ...; echo -e '\a'
 
 Ignore build errors
 
 If you are building everything (not just the packages to make a flashable image), you will probably want to keep building all packages even if some have compile errors and won't be built.
 
-# Ignore compilation errors
-IGNORE_ERRORS=1 make ...
- 
-# Ignore all errors including firmware assembly stage
-make -i ...
+    # Ignore compilation errors
+    IGNORE_ERRORS=1 make ...
+    
+    # Ignore all errors including firmware assembly stage
+    make -i ...
 
-Make a summary information of generated image
+    Make a summary information of generated image
 
-make json_overview_image_info
+    make json_overview_image_info
 
-Generate a summary of the image (including default packages, type of target, etc... ) in JSON format. The output is available in <BUILD_DIR>/profiles.json.
-Calculate checksum for generated files
+    Generate a summary of the image (including default packages, type of target, etc... ) in JSON format. The output is available in <BUILD_DIR>/profiles.json.
+    Calculate checksum for generated files
 
-make checksum
+    make checksum
 
 The following action will take place: a checksum will be computed and saved for the output files. This checksum will then be stored in the '<BIN_DIR>/sha256sums' .
 Locating images
