@@ -9,29 +9,29 @@
 
 After installing your build system's prerequisites, these are typical build steps:
 
-# Download and update the sources
-git clone https://git.openwrt.org/openwrt/openwrt.git
-cd openwrt
-git pull
- 
-# Select a specific code revision
-git branch -a
-git tag
-git checkout v23.05.0
- 
-# Update the feeds
-./scripts/feeds update -a
-./scripts/feeds install -a
- 
-# Configure the firmware image
-make menuconfig
- 
-# Optional: configure the kernel (usually not required)
-# Don't, unless have a strong reason to
-make -j$(nproc) kernel_menuconfig
- 
-# Build the firmware image
-make -j$(nproc) defconfig download clean world
+    # Download and update the sources
+    git clone https://git.openwrt.org/openwrt/openwrt.git
+    cd openwrt
+    git pull
+    
+    # Select a specific code revision
+    git branch -a
+    git tag
+    git checkout v23.05.0
+    
+    # Update the feeds
+    ./scripts/feeds update -a
+    ./scripts/feeds install -a
+    
+    # Configure the firmware image
+    make menuconfig
+    
+    # Optional: configure the kernel (usually not required)
+    # Don't, unless have a strong reason to
+    make -j$(nproc) kernel_menuconfig
+    
+    # Build the firmware image
+    make -j$(nproc) defconfig download clean world
 
 The build steps are explained in detail below.
 Downloading sources
