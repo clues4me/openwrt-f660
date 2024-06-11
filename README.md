@@ -46,6 +46,29 @@ documentation.
 binutils bzip2 diff find flex gawk gcc-6+ getopt grep install libc-dev libz-dev
 make4.1+ perl python3.7+ rsync subversion unzip which
 ```
+## Adjustment for F660 with 128Mb Flash
+
+target/linux/avanta/image/Makefile
+    find zte_f460-f660 configs in this file and change these values:
+    PAGESIZE := 2048
+    SUBPAGESIZE := 512
+    BLOCKSIZE := 128k
+    IMAGE_SIZE := 130048k
+
+target/linux/avanta/files/arch/arm/boot/dts/avanta-f460-f660.dts
+  find 'partition@ {' and change this value:
+
+    partition@500000 {
+			label = "ubi";
+			reg = <0x500000 0x1b00000>;
+		};
+
+    to
+
+    partition@400000 {
+			label = "ubi";
+			reg = <0x400000 0x7c00000>;
+		};
 
 ### Quickstart
  Below instruction was simplified version, for complete guide see build-guide.md
