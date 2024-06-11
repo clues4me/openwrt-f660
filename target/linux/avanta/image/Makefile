@@ -68,13 +68,13 @@ define Device/zte_f460-f660
   DEVICE_DTS := avanta-f460-f660
   DEVICE_PACKAGES := kmod-usb2 kmod-usb-storage kmod-usb-ledtrig-usbport \
 	kmod-gpio-button-hotplug kmod-rtl8192ce kmod-rtc-mv
-  PAGESIZE := 512
-  SUBPAGESIZE := 256
-  BLOCKSIZE := 16k
+  PAGESIZE := 2048
+  SUBPAGESIZE := 512
+  BLOCKSIZE := 128k
   KERNEL_SIZE := 4096k
   KERNEL_IN_UBI :=
   UBINIZE_OPTS := -E 5
-  IMAGE_SIZE := 31744k
+  IMAGE_SIZE := 130048k
   IMAGE/factory.bin := append-kernel | pad-to $$$$(KERNEL_SIZE) | append-ubi | \
 	check-size
 endef
