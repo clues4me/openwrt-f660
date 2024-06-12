@@ -1,0 +1,1013 @@
+Package: base-files
+Version: 240607.26819~unknown
+Depends: libc, netifd, jsonfilter, usign, openwrt-keyring, ubi-utils, fstools, fwtool
+License: GPL-2.0
+Section: base
+URL: http://openwrt.org/
+Architecture: arm_xscale
+Installed-Size: 266240
+Filename: base-files_240607.26819~unknown_arm_xscale.ipk
+Size: 51691
+SHA256sum: 33935c0915848fc559186367d793a2280d108d9a7c417ed99fce1a4f215d8f91
+Description:  This package contains a base filesystem and system scripts for OpenWrt.
+
+Package: dropbear
+Version: 2024.85-r1
+Depends: libc
+Alternatives: 100:/usr/bin/ssh-keygen:/usr/sbin/dropbear, 100:/usr/bin/scp:/usr/sbin/dropbear, 100:/usr/bin/ssh:/usr/sbin/dropbear
+License: MIT
+Section: net
+URL: https://matt.ucc.asn.au/dropbear/
+CPE-ID: cpe:/a:dropbear_ssh_project:dropbear_ssh
+Architecture: arm_xscale
+Installed-Size: 215040
+Filename: dropbear_2024.85-r1_arm_xscale.ipk
+Size: 104041
+SHA256sum: 87c4b281690e788d78cbbf25cb207ef0f33fbb775f0bd1aaa985ab9a0271cabe
+Description:  A small SSH2 server/client designed for small memory environments.
+
+Package: fstools
+Version: 2024.01.22~08cd7083-r1
+Depends: libc, ubox, ubi-utils
+License: GPL-2.0
+Section: base
+Architecture: arm_xscale
+Installed-Size: 51200
+Filename: fstools_2024.01.22~08cd7083-r1_arm_xscale.ipk
+Size: 18052
+SHA256sum: 70f58e0c6c92d7ff68f994c5746d6f77ec9f699dec84b6607d3434aa2e0292de
+Description:  OpenWrt filesystem tools
+
+Package: fwtool
+Version: 2019.11.12~8f7fe925-r1
+Depends: libc
+License: GPL-2.0
+Section: utils
+Architecture: arm_xscale
+Installed-Size: 20480
+Filename: fwtool_2019.11.12~8f7fe925-r1_arm_xscale.ipk
+Size: 4638
+SHA256sum: 9701884f2dd84f342750442d1ed0528062648203e2f4e7ad3269e586da3b79b3
+Description:  Utility for appending and extracting firmware metadata and signatures
+
+Package: kmod-cfg80211
+Version: 6.1.89.6.6.15-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), iw, iwinfo, wifi-scripts, wireless-regdb
+License: GPL-2.0-only
+Section: kernel
+URL: https://wireless.wiki.kernel.org/
+Architecture: arm_xscale
+Installed-Size: 368640
+Filename: kmod-cfg80211_6.1.89.6.6.15-r1_arm_xscale.ipk
+Size: 160584
+SHA256sum: 39d45a14e696116d168600887ebe39c267ad61a7b97f26e9d96a37438f6d9989
+Description:  cfg80211 is the Linux wireless LAN (802.11) configuration API.
+
+Package: kmod-crypto-aead
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-crypto-null
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-crypto-aead_6.1.89-r1_arm_xscale.ipk
+Size: 990
+SHA256sum: 37710c73a32de83c93d4683cf166ce223cf8c49bbe2e3b23574a15ef3476d617
+Description:  CryptoAPI AEAD support
+
+Package: kmod-crypto-ccm
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-crypto-ctr, kmod-crypto-aead
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-crypto-ccm_6.1.89-r1_arm_xscale.ipk
+Size: 963
+SHA256sum: 605e5f4a998c36a5b9af30e0f659f6cc26ac776bc9af636b90184b6db21abf3f
+Description:  Support for Counter with CBC MAC (CCM)
+
+Package: kmod-crypto-cmac
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-crypto-hash
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 20480
+Filename: kmod-crypto-cmac_6.1.89-r1_arm_xscale.ipk
+Size: 3481
+SHA256sum: 8b4a7236ce6c9bbc53b9f1ac060ff31089ba14bf49b752ee49b3c69df2300ec7
+Description:  Support for Cipher-based Message Authentication Code (CMAC)
+
+Package: kmod-crypto-crc32c
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-crypto-hash
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-crypto-crc32c_6.1.89-r1_arm_xscale.ipk
+Size: 993
+SHA256sum: 2e30f50585acac36068e023bb8fbecaa67c8c9ea956f8a4c9fd1ceaa85ac400b
+Description:  CRC32c CRC module
+
+Package: kmod-crypto-ctr
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-crypto-manager, kmod-crypto-seqiv
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-crypto-ctr_6.1.89-r1_arm_xscale.ipk
+Size: 950
+SHA256sum: c0795c9f438182dd14b84bbdbdd31ffac79452c7d367d593ae4d965f96f58937
+Description:  Counter Mode CryptoAPI module
+
+Package: kmod-crypto-gcm
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-crypto-ctr, kmod-crypto-ghash, kmod-crypto-null
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-crypto-gcm_6.1.89-r1_arm_xscale.ipk
+Size: 952
+SHA256sum: 42134eb030c6129ed903fadd64d102d8cc2f56f26699846fe78e86ceb75a7abb
+Description:  GCM/GMAC CryptoAPI module
+
+Package: kmod-crypto-gf128
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1)
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-crypto-gf128_6.1.89-r1_arm_xscale.ipk
+Size: 955
+SHA256sum: 8a0abb7c04e516f1e72b698c02bb09aa78d4fe87410fc64bd29615c47dc67e60
+Description:  GF(2^128) multiplication functions CryptoAPI module
+
+Package: kmod-crypto-ghash
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-crypto-gf128, kmod-crypto-hash
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-crypto-ghash_6.1.89-r1_arm_xscale.ipk
+Size: 962
+SHA256sum: 9017316b5257b9cd0f4b6c99b526300dc37e88cabd863c833419c252f655456d
+Description:  GHASH digest CryptoAPI module
+
+Package: kmod-crypto-hash
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1)
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-crypto-hash_6.1.89-r1_arm_xscale.ipk
+Size: 991
+SHA256sum: 6095668d7063d548abca1221ad1d390142fbca883e8555c9db663ddf9b448351
+Description:  CryptoAPI hash support
+
+Package: kmod-crypto-hmac
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-crypto-hash, kmod-crypto-manager
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 20480
+Filename: kmod-crypto-hmac_6.1.89-r1_arm_xscale.ipk
+Size: 3409
+SHA256sum: 4375cf5196497e1d15fd1fedb13991c20dba15542d6c09f8a3f5c1eef6794f93
+Description:  HMAC digest CryptoAPI module
+
+Package: kmod-crypto-manager
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-crypto-aead, kmod-crypto-hash
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-crypto-manager_6.1.89-r1_arm_xscale.ipk
+Size: 1001
+SHA256sum: 04d98b62c3e7b262b3240c435c43366b16401416abb81d5e449beaf990c4dd7e
+Description:  CryptoAPI algorithm manager
+
+Package: kmod-crypto-null
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-crypto-hash
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-crypto-null_6.1.89-r1_arm_xscale.ipk
+Size: 944
+SHA256sum: 777331f7edebdb109766a6f7bb2e3dcba904d582b8455a8d0ff87266338f2b5c
+Description:  Null CryptoAPI module
+
+Package: kmod-crypto-rng
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-crypto-hash, kmod-crypto-hmac, kmod-crypto-sha512
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 30720
+Filename: kmod-crypto-rng_6.1.89-r1_arm_xscale.ipk
+Size: 9074
+SHA256sum: 6e65f57a7b352575619dbcdb0223eb2933316fd127d7d22ef90d98298313e0e2
+Description:  CryptoAPI random number generation
+
+Package: kmod-crypto-seqiv
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-crypto-aead, kmod-crypto-rng
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 20480
+Filename: kmod-crypto-seqiv_6.1.89-r1_arm_xscale.ipk
+Size: 2947
+SHA256sum: e1caadc6995dd5cd88ea52576b7bc15249e3e294b816bf38cc683de74f82c25e
+Description:  CryptoAPI Sequence Number IV Generator
+
+Package: kmod-crypto-sha512
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-crypto-hash
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 30720
+Filename: kmod-crypto-sha512_6.1.89-r1_arm_xscale.ipk
+Size: 9821
+SHA256sum: d27c8e89ebdcaababbd39c513a76423f62009da3e611e40f85b3a3b855b87f9a
+Description:  SHA512 digest CryptoAPI module
+
+Package: kmod-dsa-mv88e6xxx
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-ptp, kmod-phy-marvell, kmod-dsa-tag-dsa
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-dsa-mv88e6xxx_6.1.89-r1_arm_xscale.ipk
+Size: 1021
+SHA256sum: ea63ba0985585d817b323a217b2ba58e3117aad6451036d9752824d5ca615f8c
+Description:  Kernel modules for MV88E6XXX DSA switches
+
+Package: kmod-dsa-tag-dsa
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1)
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-dsa-tag-dsa_6.1.89-r1_arm_xscale.ipk
+Size: 996
+SHA256sum: cb4d64c979386c1821811317b847f984068e5c99ed15e19af3434a22e5cfa1bb
+Description:  Kernel modules for Marvell DSA and EDSA tagging
+
+Package: kmod-fs-exfat
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-nls-base
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 92160
+Filename: kmod-fs-exfat_6.1.89-r1_arm_xscale.ipk
+Size: 39325
+SHA256sum: c60f3d5b9d02c2f054267ef31b22ca4e88b0f24714950f4ea57eb21941065311
+Description:  Kernel module for exFAT filesystem support
+
+Package: kmod-fs-ext4
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-lib-crc16, kmod-crypto-hash, kmod-crypto-crc32c
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 634880
+Filename: kmod-fs-ext4_6.1.89-r1_arm_xscale.ipk
+Size: 289448
+SHA256sum: e34bb84e966288fba7cef7787682a1dd59948fe2405b8c7c158e611113176d0e
+Description:  Kernel module for EXT4 filesystem support
+
+Package: kmod-fs-msdos
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-fs-vfat, kmod-nls-base
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 20480
+Filename: kmod-fs-msdos_6.1.89-r1_arm_xscale.ipk
+Size: 6005
+SHA256sum: 67b64bcfbd686faa282593a992d8a096c866c0864715466378aa04c96854a528
+Description:  Kernel module for MSDOS filesystem support
+
+Package: kmod-fs-vfat
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-nls-base, kmod-nls-cp437, kmod-nls-iso8859-1, kmod-nls-utf8
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 102400
+Filename: kmod-fs-vfat_6.1.89-r1_arm_xscale.ipk
+Size: 43701
+SHA256sum: 88a4c44dce8c293254982bce82414c1d97abace1663cdd4b6bb9f2b3473e79a6
+Description:  Kernel module for VFAT filesystem support
+
+Package: kmod-gpio-button-hotplug
+Version: 6.1.89-r3
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1)
+License: GPL-2.0
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 20480
+Filename: kmod-gpio-button-hotplug_6.1.89-r3_arm_xscale.ipk
+Size: 6471
+SHA256sum: c1e005ef3d1d5f8c6da395eee4880fedff74cfdc066e278c58ee9098a4bbf9f7
+Description:  This is a replacement for the following in-kernel drivers:
+ 1) gpio_keys (KEYBOARD_GPIO)
+ 2) gpio_keys_polled (KEYBOARD_GPIO_POLLED)
+ 
+ Instead of generating input events (like in-kernel drivers do) it generates
+ uevent-s and broadcasts them. This allows disabling input subsystem which is
+ an overkill for OpenWrt simple needs.
+
+Package: kmod-ipvlan
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1)
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 40960
+Filename: kmod-ipvlan_6.1.89-r1_arm_xscale.ipk
+Size: 13838
+SHA256sum: 4451100195e73b678fb69b7798a68d71b23ead7a8e13f90f1e405517f1b9a594
+Description:  A kernel module which allows one to create virtual interfaces that
+ map packets to or from specific IP addresses to a particular interface
+
+Package: kmod-lib-crc-ccitt
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1)
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-lib-crc-ccitt_6.1.89-r1_arm_xscale.ipk
+Size: 3017
+SHA256sum: 561e76e27395f14f54ed12b4a3d9381dd917d877edebfc2e5d8e593ea23995ee
+Description:  Kernel module for CRC-CCITT support
+
+Package: kmod-lib-crc16
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1)
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-lib-crc16_6.1.89-r1_arm_xscale.ipk
+Size: 985
+SHA256sum: 0e65e33c961a85cdc0645c8d6286187515e6fe0e77cfac5b12de0a9d0e36fa69
+Description:  Kernel module for CRC16 support
+
+Package: kmod-lib-crc32c
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-crypto-crc32c
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-lib-crc32c_6.1.89-r1_arm_xscale.ipk
+Size: 2319
+SHA256sum: 3b9eb0655baaf603efaff8bc19f94834def41cf6cf8ff96ed6d2259ad60a0870
+Description:  Kernel module for CRC32 support
+
+Package: kmod-libphy
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1)
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-libphy_6.1.89-r1_arm_xscale.ipk
+Size: 968
+SHA256sum: 4db4ade2c26ee3d27d96f6697f6a5620cbfc1d12119ab8780853d944a0c9801d
+Description:  PHY library
+
+Package: kmod-mac80211
+Version: 6.1.89.6.6.15-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-cfg80211, kmod-crypto-cmac, kmod-crypto-ccm, kmod-crypto-gcm, hostapd-common
+License: GPL-2.0-only
+Section: kernel
+URL: https://wireless.wiki.kernel.org/
+Architecture: arm_xscale
+Installed-Size: 747520
+Filename: kmod-mac80211_6.1.89.6.6.15-r1_arm_xscale.ipk
+Size: 336772
+SHA256sum: d837c85152903f966db11fe8f23a218e2d38506492231df0b1e67cec1fd6c3f9
+Description:  Generic IEEE 802.11 Networking Stack (mac80211)
+
+Package: kmod-nf-conntrack6
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-nf-conntrack
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-nf-conntrack6_6.1.89-r1_arm_xscale.ipk
+Size: 855
+SHA256sum: 4ef246de86dec67d9e9d6baafee2a85f74286ceb4c8603a74aec191a2087699f
+Description:  Netfilter IPv6 connection tracking
+
+Package: kmod-nf-conntrack
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1)
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 122880
+Filename: kmod-nf-conntrack_6.1.89-r1_arm_xscale.ipk
+Size: 46929
+SHA256sum: 4767adb6995c27f84ef0d5b327121629546a494865e7bf098376bd42abc45e11
+Description:  Netfilter connection tracking
+
+Package: kmod-nf-flow
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-nf-conntrack
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 40960
+Filename: kmod-nf-flow_6.1.89-r1_arm_xscale.ipk
+Size: 15823
+SHA256sum: 74cfb502f6e662bd37dfa2547858992d508c7faaab0f30866ee1fff9bce68d2f
+Description:  Netfilter flowtable support
+
+Package: kmod-nf-log6
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-nf-log
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-nf-log6_6.1.89-r1_arm_xscale.ipk
+Size: 852
+SHA256sum: 331ce69e1c11dad3693cd2255db301a846e957cdf85ab3242c14c104afc7adc6
+Description:  Netfilter IPV6 Logging
+
+Package: kmod-nf-log
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1)
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 30720
+Filename: kmod-nf-log_6.1.89-r1_arm_xscale.ipk
+Size: 8358
+SHA256sum: 199b95729ac653a843e85bae8cdf6dd8a84c779c9b709124d1c0cf1e9a371523
+Description:  Netfilter Logging
+
+Package: kmod-nf-nat
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-nf-conntrack
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 40960
+Filename: kmod-nf-nat_6.1.89-r1_arm_xscale.ipk
+Size: 14639
+SHA256sum: 843c6a5f781501d1ce093927ad6fa2f6ab117a989ceababd834cb49a8ae745cd
+Description:  Netfilter NAT
+
+Package: kmod-nf-reject6
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1)
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 20480
+Filename: kmod-nf-reject6_6.1.89-r1_arm_xscale.ipk
+Size: 4521
+SHA256sum: 28b41d0a9278a0ee5feffae4d3701766dbecfd10223725e971c625364d463b0d
+Description:  Netfilter IPv6 reject support
+
+Package: kmod-nf-reject
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1)
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 20480
+Filename: kmod-nf-reject_6.1.89-r1_arm_xscale.ipk
+Size: 4211
+SHA256sum: 54fd69638a83274e8f37aebcba13aa27131e4409b5232f7d5dbf3a2889e246fd
+Description:  Netfilter IPv4 reject support
+
+Package: kmod-nfnetlink
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1)
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 20480
+Filename: kmod-nfnetlink_6.1.89-r1_arm_xscale.ipk
+Size: 5732
+SHA256sum: 9fb40afd663831812260c877f00f6944c2de827730f0019ca8639acca79901d5
+Description:  Kernel modules support for a netlink-based userspace interface
+
+Package: kmod-nft-core
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-nfnetlink, kmod-nf-reject, kmod-nf-reject6, kmod-nf-conntrack6, kmod-nf-nat, kmod-nf-log, kmod-nf-log6, kmod-lib-crc32c
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 317440
+Filename: kmod-nft-core_6.1.89-r1_arm_xscale.ipk
+Size: 122619
+SHA256sum: 0ae2783a923e972454192b01c95bc66ac1337dad7d48f490fedec952536477c2
+Description:  Kernel module support for nftables
+
+Package: kmod-nft-fib
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-nft-core
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 30720
+Filename: kmod-nft-fib_6.1.89-r1_arm_xscale.ipk
+Size: 7222
+SHA256sum: d7d3e5d57b15628eab807cdc2abacc4e9f4239fee0c80ac11d9ef75767a01029
+Description:  Netfilter nf_tables fib support
+
+Package: kmod-nft-nat
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-nft-core, kmod-nf-nat
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 30720
+Filename: kmod-nft-nat_6.1.89-r1_arm_xscale.ipk
+Size: 5897
+SHA256sum: 8857207597c28a53a86e068a7b3f5b81031462f2333b0da9261298d14a6ab3db
+Description:  Netfilter nf_tables NAT support
+
+Package: kmod-nft-offload
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-nf-flow, kmod-nft-nat
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 20480
+Filename: kmod-nft-offload_6.1.89-r1_arm_xscale.ipk
+Size: 5798
+SHA256sum: ebf7183e84ce7e128d76ccbe1761c448a03d25bde6fcb6eb184e1a03a23aa7a6
+Description:  Netfilter nf_tables routing/NAT offload support
+
+Package: kmod-nls-base
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1)
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-nls-base_6.1.89-r1_arm_xscale.ipk
+Size: 861
+SHA256sum: bf04e332076ba9de927044967e02ac805b4587f8bc9bac70819060af7f88673a
+Description:  Kernel module for NLS (Native Language Support)
+
+Package: kmod-nls-cp437
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-nls-base
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 20480
+Filename: kmod-nls-cp437_6.1.89-r1_arm_xscale.ipk
+Size: 3266
+SHA256sum: 84ea68f6b4c3352e2c8226c355034670506ed4043ef724c0374cf93877c31f80
+Description:  Kernel module for NLS Codepage 437 (United States, Canada)
+
+Package: kmod-nls-iso8859-1
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-nls-base
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 20480
+Filename: kmod-nls-iso8859-1_6.1.89-r1_arm_xscale.ipk
+Size: 2928
+SHA256sum: 5688a00831b05d23263158ce35747cae8c2a5b51acd87b7c53b863569aa02003
+Description:  Kernel module for NLS ISO 8859-1 (Latin 1)
+
+Package: kmod-nls-utf8
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-nls-base
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-nls-utf8_6.1.89-r1_arm_xscale.ipk
+Size: 2173
+SHA256sum: a39f3b08854de41663f9c220adc4363c59e17152e526110a5e100f41866f6ad9
+Description:  Kernel module for NLS UTF-8
+
+Package: kmod-phy-marvell
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-libphy
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-phy-marvell_6.1.89-r1_arm_xscale.ipk
+Size: 1057
+SHA256sum: 5a8dabe3ec3c04b3b057d1b5b8677576018afcc4be8adce6e4e1d07b0febdbdd
+Description:  Supports Marvell Gigabit Ethernet PHYs:
+ * 88E1101
+ * 88E1112
+ * 88E1111 (incl. Finisar variant)
+ * 88E1118
+ * 88E1121R
+ * 88E1145
+ * 88E1149R
+ * 88E1240
+ * 88E1318S
+ * 88E1116R
+ * 88E1510
+ * 88E1540
+ * 88E1545
+ * 88E3016
+ * 88E6341 family
+ * 88E6390 family
+ * 88E6393 family
+ * 88E1340S
+ * 88E1548P
+
+Package: kmod-ppp
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-lib-crc-ccitt, kmod-slhc
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 61440
+Filename: kmod-ppp_6.1.89-r1_arm_xscale.ipk
+Size: 24139
+SHA256sum: 4a7d50ceab937ca33c61bb7c0e131b4c5b8e755defeb5808559c7f4770b76557
+Description:  Kernel modules for PPP support
+
+Package: kmod-pppoe
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-ppp, kmod-pppox
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 30720
+Filename: kmod-pppoe_6.1.89-r1_arm_xscale.ipk
+Size: 8494
+SHA256sum: 8a19e7ea118230ab49379248ca343cdbbc903934f95e94daec6a743fcd1001ca
+Description:  Kernel module for PPPoE (PPP over Ethernet) support
+
+Package: kmod-pppox
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-ppp
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-pppox_6.1.89-r1_arm_xscale.ipk
+Size: 2696
+SHA256sum: d81a9edc45638080f0f0225c3dd957714677ccfd6f8b2d4add6b0929775a7317
+Description:  Kernel helper module for PPPoE and PPTP support
+
+Package: kmod-pps
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1)
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 20480
+Filename: kmod-pps_6.1.89-r1_arm_xscale.ipk
+Size: 6029
+SHA256sum: 909f182b644871bf476241b6c703d20b01adb2a4d9571f5599c1cf66397b0817
+Description:  PPS (Pulse Per Second) is a special pulse provided by some GPS
+ antennae. Userland can use it to get a high-precision time
+ reference.
+
+Package: kmod-ptp
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-pps
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 40960
+Filename: kmod-ptp_6.1.89-r1_arm_xscale.ipk
+Size: 12749
+SHA256sum: fe52c9d6e5eb692a0663bf22269ce35b9b973860271074293da8f2898b652dfc
+Description:  The IEEE 1588 standard defines a method to precisely
+ synchronize distributed clocks over Ethernet networks.
+
+Package: kmod-rtc-mv
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1)
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-rtc-mv_6.1.89-r1_arm_xscale.ipk
+Size: 939
+SHA256sum: c128b8243448f781485dd8bfc21e79bf152e774978ce2fdf3a0c2d77de2b3c1e
+Description:  Kernel module for Marvell SoC RTC.
+
+Package: kmod-rtl8192c-common
+Version: 6.1.89.6.6.15-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-rtlwifi
+License: GPL-2.0-only
+Section: kernel
+URL: https://wireless.wiki.kernel.org/
+Architecture: arm_xscale
+Installed-Size: 61440
+Filename: kmod-rtl8192c-common_6.1.89.6.6.15-r1_arm_xscale.ipk
+Size: 23696
+SHA256sum: 4643eda13a9e37a7217a9509aaed987464003804b2f3a05a8efc33ae721ab57a
+Description:  Realtek RTL8192CE/RTL8192CU common support module
+
+Package: kmod-rtl8192ce
+Version: 6.1.89.6.6.15-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-rtlwifi-pci, kmod-rtl8192c-common, rtl8192ce-firmware
+License: GPL-2.0-only
+Section: kernel
+URL: https://wireless.wiki.kernel.org/
+Architecture: arm_xscale
+Installed-Size: 81920
+Filename: kmod-rtl8192ce_6.1.89.6.6.15-r1_arm_xscale.ipk
+Size: 29891
+SHA256sum: beeb74fddb6c48c4f2508a53789a81f28db878b5f7b53be989dc37fe77580715
+Description:  Realtek RTL8192CE/RTL8188CE support
+
+Package: kmod-rtl8192cu
+Version: 6.1.89.6.6.15-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-rtlwifi-usb, kmod-rtl8192c-common, rtl8192cu-firmware
+License: GPL-2.0-only
+Section: kernel
+URL: https://wireless.wiki.kernel.org/
+Architecture: arm_xscale
+Installed-Size: 102400
+Filename: kmod-rtl8192cu_6.1.89.6.6.15-r1_arm_xscale.ipk
+Size: 33613
+SHA256sum: b80e4679961ed827cbe2aaad89678004daebea6324108adf1dbd9e8de87c040d
+Description:  Realtek RTL8192CU/RTL8188CU support
+
+Package: kmod-rtl8192de
+Version: 6.1.89.6.6.15-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-rtlwifi-pci, rtl8192de-firmware
+License: GPL-2.0-only
+Section: kernel
+URL: https://wireless.wiki.kernel.org/
+Architecture: arm_xscale
+Installed-Size: 153600
+Filename: kmod-rtl8192de_6.1.89.6.6.15-r1_arm_xscale.ipk
+Size: 60143
+SHA256sum: 3cc96515fff1ccbdb3617b5b4e753da69fa1e53035240981214212c5385f6f86
+Description:  Realtek RTL8192DE/RTL8188DE support
+
+Package: kmod-rtl8192se
+Version: 6.1.89.6.6.15-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-rtlwifi-pci, rtl8192se-firmware
+License: GPL-2.0-only
+Section: kernel
+URL: https://wireless.wiki.kernel.org/
+Architecture: arm_xscale
+Installed-Size: 92160
+Filename: kmod-rtl8192se_6.1.89.6.6.15-r1_arm_xscale.ipk
+Size: 37058
+SHA256sum: 8c29d574e42baad422c368e0a82ca19049120934bb18d87fff614d16c36f39df
+Description:  Realtek RTL8192SE/RTL8191SE support
+
+Package: kmod-rtlwifi-pci
+Version: 6.1.89.6.6.15-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-rtlwifi
+License: GPL-2.0-only
+Section: kernel
+URL: https://wireless.wiki.kernel.org/
+Architecture: arm_xscale
+Installed-Size: 40960
+Filename: kmod-rtlwifi-pci_6.1.89.6.6.15-r1_arm_xscale.ipk
+Size: 15319
+SHA256sum: be7923483a1753ef0c951cac57d5fcdf86380126a0726934207d4d2ad6048e42
+Description:  Realtek common driver part (PCI support)
+
+Package: kmod-rtlwifi-usb
+Version: 6.1.89.6.6.15-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-usb-core, kmod-rtlwifi
+License: GPL-2.0-only
+Section: kernel
+URL: https://wireless.wiki.kernel.org/
+Architecture: arm_xscale
+Installed-Size: 30720
+Filename: kmod-rtlwifi-usb_6.1.89.6.6.15-r1_arm_xscale.ipk
+Size: 8247
+SHA256sum: 0eae085ce9b01e8357cfccfb20f66168b8c02028e5aed668a261dcb78adcc520
+Description:  Realtek common driver part (USB support)
+
+Package: kmod-rtlwifi
+Version: 6.1.89.6.6.15-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-mac80211
+License: GPL-2.0-only
+Section: kernel
+URL: https://wireless.wiki.kernel.org/
+Architecture: arm_xscale
+Installed-Size: 112640
+Filename: kmod-rtlwifi_6.1.89.6.6.15-r1_arm_xscale.ipk
+Size: 45140
+SHA256sum: 80a6f3d876f9923394399942766594e6d7dfdfac2c1797cc26362ab437c0bba7
+Description:  Realtek common driver part
+
+Package: kmod-scsi-core
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1)
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-scsi-core_6.1.89-r1_arm_xscale.ipk
+Size: 995
+SHA256sum: c36b65591bddf9a48c7030a21bd1194047de18e387aada4c5a385540ad9814c2
+Description:  SCSI device support
+
+Package: kmod-slhc
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-lib-crc-ccitt
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 20480
+Filename: kmod-slhc_6.1.89-r1_arm_xscale.ipk
+Size: 4535
+SHA256sum: 35a50a0a4a7d8cbd9db8fc2a464c4c0f4b8df721a9c2033ed6cb6777671ab871
+Description:  Serial Line Header Compression
+
+Package: kmod-usb-core
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-nls-base
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: kmod-usb-core_6.1.89-r1_arm_xscale.ipk
+Size: 992
+SHA256sum: 1c90c2ba6ec72da53cb4504524b2640e531330be2e3dbf8a47852b86ed25aa9a
+Description:  Kernel support for USB
+
+Package: kmod-usb-ehci
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-usb-core
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 51200
+Filename: kmod-usb-ehci_6.1.89-r1_arm_xscale.ipk
+Size: 24405
+SHA256sum: 9547b96b35ffaf10c56680e8f35edd3769406e424437f23cb7ca0065dbc78579
+Description:  EHCI controller support
+
+Package: kmod-usb-ledtrig-usbport
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-usb-core
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 20480
+Filename: kmod-usb-ledtrig-usbport_6.1.89-r1_arm_xscale.ipk
+Size: 4101
+SHA256sum: 6c1ba685f9e0dc5ae62fec600151e62c21f979b6130b6715ddf7c33dd831b905
+Description:  This driver allows LEDs to be controlled by USB events. Enabling this
+ trigger allows specifying list of USB ports that should turn on LED
+ when some USB device gets connected.
+ If possible it should be prefered over similar ledtrig-usbdev.
+
+Package: kmod-usb-storage
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-scsi-core, kmod-usb-core
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 71680
+Filename: kmod-usb-storage_6.1.89-r1_arm_xscale.ipk
+Size: 23045
+SHA256sum: e15960d40a3c1cfcc51bdcbfa7169c3dcc29304413c50417c8a8c5d53f83946a
+Description:  Kernel support for USB Mass Storage devices
+
+Package: kmod-usb2
+Version: 6.1.89-r1
+Depends: kernel (=6.1.89~acf94c8ff675fd3c5efcd4bc46d9e8b7-r1), kmod-usb-ehci, kmod-usb-core
+License: GPL-2.0-only
+Section: kernel
+Architecture: arm_xscale
+Installed-Size: 40960
+Filename: kmod-usb2_6.1.89-r1_arm_xscale.ipk
+Size: 10598
+SHA256sum: bcfa5bc5d235a4d4f18c1e2a3e211e326acbfc33862f0453bb003d5833eaa110
+Description:  Kernel support for USB2 (EHCI) controllers
+
+Package: libatomic1
+Version: 13.3.0-r4
+Depends: libgcc1
+Provides: libatomic
+License: GPL-3.0-with-GCC-exception
+Section: libs
+URL: http://gcc.gnu.org/
+ABIVersion: 1
+Status: unknown hold not-installed
+Essential: yes
+Architecture: arm_xscale
+Installed-Size: 30720
+Filename: libatomic1_13.3.0-r4_arm_xscale.ipk
+Size: 6831
+SHA256sum: 043266141006d39e7359f2762836c1306a51dc1e598bed57318c23c2509b9fd3
+Description:  Atomic support library
+
+Package: libgcc1
+Version: 13.3.0-r4
+Provides: libgcc
+License: GPL-3.0-with-GCC-exception
+Section: libs
+URL: http://gcc.gnu.org/
+ABIVersion: 1
+Status: unknown hold not-installed
+Essential: yes
+Architecture: arm_xscale
+Installed-Size: 61440
+Filename: libgcc1_13.3.0-r4_arm_xscale.ipk
+Size: 22925
+SHA256sum: 6027dbe644678b5eddfbd3754c64ea10c1eaddbcc52c24cfc2f1e6b400ebde0d
+Description:  GCC support library
+
+Package: libpthread
+Version: 1.2.5-r4
+Depends: libgcc1
+License: GPL-3.0-with-GCC-exception
+Section: libs
+URL: http://www.musl-libc.org/
+Status: unknown hold not-installed
+Essential: yes
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: libpthread_1.2.5-r4_arm_xscale.ipk
+Size: 907
+SHA256sum: 15366ac7c79912859db3480cd20d9159e6c10672e9948476888a5b32b919ac50
+Description:  POSIX thread library
+
+Package: librt
+Version: 1.2.5-r4
+Depends: libpthread
+License: GPL-3.0-with-GCC-exception
+Section: libs
+URL: http://www.musl-libc.org/
+Status: unknown hold not-installed
+Essential: yes
+Architecture: arm_xscale
+Installed-Size: 10240
+Filename: librt_1.2.5-r4_arm_xscale.ipk
+Size: 915
+SHA256sum: 05a9149f3eccfc7cc9f33e86781e370212b52c25c2f23dca202d8e3243ea8ae6
+Description:  POSIX.1b RealTime extension library
+
+Package: mtd
+Version: 26
+Depends: libc, libubox20240329
+License: GPL-2.0+
+Section: utils
+Architecture: arm_xscale
+Installed-Size: 30720
+Filename: mtd_26_arm_xscale.ipk
+Size: 10753
+SHA256sum: c6c6278d5abaf896a382ba4421c31979ce7ad615915ae4be1d385c952697630c
+Description:  This package contains an utility useful to upgrade from other firmware or 
+ older OpenWrt releases.
+
+Package: ubi-utils
+Version: 2.1.6-r2
+Depends: libc
+License: GPLv2
+Section: utils
+URL: http://www.linux-mtd.infradead.org/
+CPE-ID: cpe:/a:mtd-utils_project:mtd-utils
+Architecture: arm_xscale
+Installed-Size: 245760
+Filename: ubi-utils_2.1.6-r2_arm_xscale.ipk
+Size: 77977
+SHA256sum: cd20a92ad1279ff5e706c2d3b3cc2d985e5a571f9ec8fdbcd5438405fce41700
+Description:  Utilities for manipulating memory technology devices.
+
+Package: uboot-envtools
+Version: 2024.01-r3
+Depends: libc
+License: GPL-2.0 GPL-2.0+
+Section: utils
+URL: http://www.denx.de/wiki/U-Boot
+Architecture: arm_xscale
+Installed-Size: 40960
+Filename: uboot-envtools_2024.01-r3_arm_xscale.ipk
+Size: 14700
+SHA256sum: a1c67f616b408e6111ff97fbf580382b914b6c85c97e4493eb66e39c03f15d11
+Description:  This package includes tools to read and modify U-Boot bootloader environment.
+
